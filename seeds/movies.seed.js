@@ -1,18 +1,7 @@
 const MONGO_URL = "mongodb://localhost:27017/lab-express-cinema";
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", true);
-const Movie = require("../models/Movie.model");
-
-mongoose.connect(MONGO_URL)
-.then(response => console.log("Connected to DB for seeding"))
-.then(() => {
-  Movie.create(movies);
-})
-.then(() => mongoose.connection.close())
-// the close connection created a MongoClient issue
-.catch(err => console.log(err));
-
-module.exports = movies;
+const Movie = require("../models/Movie.model.js");
 
 const movies = [
     {
@@ -96,5 +85,30 @@ const movies = [
       showtimes: ["13:00", "15:30", "18:00", "20:10", "22:40"]
     }
   ];
-  
-  
+  mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("Connected to DB for seeding");
+    Movie.insertMany(movies, (err, docs) => {
+      if (err) {
+        console.log("Error seeding database:", err);
+      } else {
+        console.log("Database seeded successfully");
+      }
+      mongoose.connection.close();
+    });
+  })
+  .catch(err => console.log(err));
+
+module.exports = movies;
+  Movie.create(movies)
+  .then(() => {
+    console.log('Movies created successfully');
+    mongoose.connection.close();
+  })
+  .catch((error) => {
+    console.log(`Error while creating movies: ${error}`);
+  // });
+})
+.catch((error) => {
+console.log(`Error connecting to the database: ${error}`);
+});

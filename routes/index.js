@@ -3,6 +3,7 @@ const hbs = require('hbs');
 hbs.registerPartials(__dirname + "/views/partials");
 const Movie = require("../models/Movie.model");
 const router = express.Router();
+const movies = require('../seeds/movies.seed.js');
 
 
 /* GET home page */
