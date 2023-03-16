@@ -94,21 +94,23 @@ const movies = [
       } else {
         console.log("Database seeded successfully");
       }
-      mongoose.connection.close();
+      // mongoose.connection.close();
     });
   })
   .catch(err => console.log(err));
 
+// module.exports = movies;
+//   Movie.create(movies)
+//   .then(() => {
+//     console.log('Movies created successfully');
+//     mongoose.connection.close();
+//   })
+//   .catch((error) => {
+//     console.log(`Error while creating movies: ${error}`);
+//   // });
+// })
+// .catch((error) => {
+// console.log(`Error connecting to the database: ${error}`);
+// });
+
 module.exports = movies;
-  Movie.create(movies)
-  .then(() => {
-    console.log('Movies created successfully');
-    mongoose.connection.close();
-  })
-  .catch((error) => {
-    console.log(`Error while creating movies: ${error}`);
-  // });
-})
-.catch((error) => {
-console.log(`Error connecting to the database: ${error}`);
-});

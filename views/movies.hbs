@@ -1,47 +1,30 @@
-
 <!-- movies.hbs -->
 <h1>All Movies</h1>
 
 <button type="button"><a href="/">Back to home page</a></button>
-<h3>Click on the movie to check the showtimes.</h3>
+
 {{#if movies}}
 <div id="all-movies">
   <ul>
+    <div class="movie-container"> <!-- Move the movie-container div outside the loop -->
     {{#each movies}}
+     <div class="movie-card">
       <li>
-        <h2>{{this.title}}</h2>
+        <h2 class="movie-title">{{this.title}}</h2>
+        <img class="movie-image" src="{{this.image}}" alt="{{this.title}} poster">
+        <h6>Click on the movie to check the showtimes.</h6>
         <p><strong>Director:</strong> {{this.director}}</p>
-        <p><strong>Stars:</strong> {{this.stars}}</p>
-        <p><strong>Description:</strong> {{this.description}}</p>
-        <p><strong>Showtimes:</strong> {{this.showtimes}}</p>
-        <img src="{{this.image}}" alt="{{this.title}} poster">
+        <p class="movie-stars"><strong>Stars:</strong> {{this.stars}}</p>
+        <p class="movie-description"><strong>Description:</strong> {{this.description}}</p>
+        <p class='movie-showtimes'><strong>Showtimes:</strong> {{this.showtimes}}</p>
+        
       </li>
+     </div>
+     <br></br>
     {{/each}}
+    </div> <!-- Close the movie-container div -->
   </ul>
   </div>
 {{else}}
   <p>No movies found.</p>
 {{/if}}
-
-
-{{!-- {{#each movies}}
-<div>
-  <h2>{{this.title}}</h2>
-  <img src="{{this.image}}" alt="{{this.title}}">
-  <p>{{this.description}}</p>
-  <ul>
-    {{#each this.showtimes}}
-    <li>{{this}}</li>
-    {{/each}}
-  </ul>
-</div>
-{{/each}} --}}
-
-
-
-
-
-
-
-
-

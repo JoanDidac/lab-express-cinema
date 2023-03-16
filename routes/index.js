@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => res.render('index'));
 /* GET all movies page */
 router.get("/movies", async (req, res, next) => {
   try {
-    const movies = await Movie.find({}).sort({ title: 1 });
+    const movies = await Movie.find({});
     res.render("movies", { movies });
   } catch (error) {
     next(error);
