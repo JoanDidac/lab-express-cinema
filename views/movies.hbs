@@ -1,4 +1,4 @@
-<!-- movies.hbs -->
+
 <button class="back-btn" type="button"><a href="/">Back to home page</a></button>
 <div class="allMovies">
 <h1>Movies List</h1>
@@ -7,7 +7,7 @@
 {{#if movies}}
 <div id="all-movies">
   <ul>
-    <div class="movie-container"> <!-- Move the movie-container div outside the loop -->
+    <div class="movie-container"> 
     {{#each movies}}
      <div class="movie-card">
       <li>
@@ -25,7 +25,7 @@
      </div>
      <br></br>
     {{/each}}
-    </div> <!-- Close the movie-container div -->
+    </div> 
   </ul>
   </div>
 {{else}}

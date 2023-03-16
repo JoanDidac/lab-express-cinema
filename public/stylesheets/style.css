@@ -97,11 +97,7 @@ a {
   font-family: 'Montserrat';
   height: 1400px;
   color: white;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   margin-top: calc(20%);
-  
   font-size: 1.5em;
   
   
@@ -154,12 +150,12 @@ font-size: 9px;
   display: block;
   padding: 5px 10px;
   box-shadow: 0px 0px 10px rgb(128, 128, 128);
-  border: 6px solid rgba(128, 128, 128, 0.6); /* Add the border */
-  border-radius: 8px; /* Add rounded corners */
-  position: relative; /* Make the container a reference point for the absolute position of the circles */
+  border: 6px solid rgba(128, 128, 128, 0.6); 
+  border-radius: 8px; 
+  position: relative; 
 }
 
-/* Add the circles to mimic the 8mm recording tape holes */
+
 .movie-title:before,
 .movie-title:after {
   content: '';
@@ -172,13 +168,13 @@ font-size: 9px;
 
 .movie-title:before {
   top: 50%;
-  left: -6px; /* Adjust this value to move the circle horizontally */
+  left: -6px; 
   transform: translateY(-50%);
 }
 
 .movie-title:after {
   top: 50%;
-  right: -6px; /* Adjust this value to move the circle horizontally */
+  right: -6px; 
   transform: translateY(-50%);
 }
 
