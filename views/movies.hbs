@@ -1,7 +1,8 @@
 <!-- movies.hbs -->
-<h1>All Movies</h1>
-
-<button type="button"><a href="/">Back to home page</a></button>
+<button class="back-btn" type="button"><a href="/">Back to home page</a></button>
+<div class="allMovies">
+<h1>Movies List</h1>
+</div>
 
 {{#if movies}}
 <div id="all-movies">
@@ -17,6 +18,8 @@
         <p class="movie-stars"><strong>Stars:</strong> {{this.stars}}</p>
         <p class="movie-description"><strong>Description:</strong> {{this.description}}</p>
         <p class='movie-showtimes'><strong>Showtimes:</strong> {{this.showtimes}}</p>
+
+        <button class="seeMore" type="button"><a href="/movies/{{this._id}}">See More</a></button>
         
       </li>
      </div>
